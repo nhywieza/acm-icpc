@@ -18,7 +18,7 @@ void dfs(int N,int num,int step){
         if(step+dp[k]<=mx) return ;
         int cnt = 0;
         for(int j=i+1;j<num;j++)
-            if(mat[k][stack[step][j]]){
+            if(!mat[k][stack[step][j]]){
                  stack[step+1][cnt++]=stack[step][j];
             }
         dfs(N,cnt,step+1);
@@ -31,7 +31,7 @@ void run(int N){
     for(int i=N-1;i>=0;i--){
         int sz =0;
         for(int j=i+1;j<N;j++)
-            if(mat[i][j]) stack[1][sz++]=j;
+            if(!mat[i][j]) stack[1][sz++]=j;
         dfs(N,sz,1);
         dp[i]=mx;
     }
