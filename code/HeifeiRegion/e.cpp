@@ -38,7 +38,7 @@ void dfs(int N,int num,int step){
         dfs(N,cnt,step+1);
     }
 }
-
+	
 void run(int N){
 
     mx =0;
